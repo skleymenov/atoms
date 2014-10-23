@@ -42,6 +42,6 @@ cd output
 BEST=`grep WC *.out | sort -k7 | tail -n1 | sed "s/\(^.*\):.*/\1/"`
 WORST=`grep WC *.out | sort -k7 | head -n1 | sed "s/\(^.*\):.*/\1/"`
 
-ln -ns $BEST best
-ln -ns $WORST worst
+ln -fs $BEST best
+ln -fs $WORST worst
 
