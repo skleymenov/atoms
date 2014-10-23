@@ -38,3 +38,10 @@ srun ./xhpl
 echo -n "Done: "
 date
 
+cd output
+BEST=`grep WC *.out | sort -k7 | tail -n1 | sed "s/\(^.*\):.*/\1/"`
+WORST=`grep WC *.out | sort -k7 | head -n1 | sed "s/\(^.*\):.*/\1/"`
+
+ln -ns $BEST best
+ln -ns $WORST worst
+
