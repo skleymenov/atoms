@@ -1,2 +1,4 @@
 bin/xhpl_offload_intel64
+bin/mpilinktest
+bin/pingponganalysis
 */output
