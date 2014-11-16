@@ -5,7 +5,7 @@
 #SBATCH --reservation=stress
 #SBATCH --nodes=4
 #SBATCH --ntasks-per-node=1
-#SBATCH --time=00:45:00
+#SBATCH --time=01:30:00
 #SBATCH --job-name=berylium
 #SBATCH --workdir=/homeb/zam/sk/atoms/berylium
 #SBATCH --error=output/%j_%N.err
@@ -41,6 +41,8 @@ date
 cd output
 BEST=`grep WC *.out | sort -k7 | tail -n1 | sed "s/\(^.*\):.*/\1/"`
 WORST=`grep WC *.out | sort -k7 | head -n1 | sed "s/\(^.*\):.*/\1/"`
+echo $BEST
+echo $WORST
 
 ln -fs $BEST best
 ln -fs $WORST worst
